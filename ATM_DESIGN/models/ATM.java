@@ -2,6 +2,7 @@ package ATM_DESIGN.models;
 
 import ATM_DESIGN.apis.BackendApis;
 import ATM_DESIGN.enums.ATMState;
+import ATM_DESIGN.dto.UpdateAtmStateRequestDto;
 import java.math.BigDecimal;
 
 public class ATM {
@@ -35,7 +36,7 @@ public class ATM {
 
     public void setAtmState(ATMState atmState) {
         this.atmState = atmState;
-        this.backendApis.updateAtmState(this, this.atmState);
+        this.backendApis.updateAtmState(new UpdateAtmStateRequestDto(this.atmId, this.atmState));
     }
 
     public static class AtmBuilder {

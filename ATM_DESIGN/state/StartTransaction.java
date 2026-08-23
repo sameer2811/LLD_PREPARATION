@@ -6,6 +6,7 @@ import ATM_DESIGN.apis.BackendApis;
 import ATM_DESIGN.enums.ATMState;
 import ATM_DESIGN.models.ATM;
 import ATM_DESIGN.models.Card;
+import ATM_DESIGN.dto.StartTransactionRequestDto;
 
 public class StartTransaction implements State {
 
@@ -25,7 +26,7 @@ public class StartTransaction implements State {
     @Override
     public int startTransaction() {
         System.out.println("Your Transaction is Started !!!");
-        int transactionId = backendApis.startTransaction(this.atm.getAtmId());
+        int transactionId = backendApis.startTransaction(new StartTransactionRequestDto(this.atm.getAtmId()));
         System.out.println("Transaction ID: " + transactionId);
 
         if (transactionId > 0) {

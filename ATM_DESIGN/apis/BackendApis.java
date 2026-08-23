@@ -1,19 +1,22 @@
 package ATM_DESIGN.apis;
 
-import java.math.BigDecimal;
-
-import ATM_DESIGN.enums.ATMState;
-import ATM_DESIGN.models.ATM;
-import ATM_DESIGN.models.Card;
+import ATM_DESIGN.dto.StartTransactionRequestDto;
+import ATM_DESIGN.dto.ValidateCardDetailsRequestDto;
+import ATM_DESIGN.dto.ValidateCashWithdrawalAmountDto;
+import ATM_DESIGN.dto.UpdateAtmBalanceRequestDto;
+import ATM_DESIGN.dto.UpdateAtmStateRequestDto;
+import ATM_DESIGN.dto.CloseTransactionRequestDto;
 
 public interface BackendApis {
-    int startTransaction(String atmId);
+    int startTransaction(StartTransactionRequestDto startTransactionRequestDto);
 
-    boolean validateCardDetails(Card card);
+    boolean validateCardDetails(ValidateCardDetailsRequestDto validateCardDetailsRequestDto);
 
-    boolean validateCashWithdrawalAmount(Card card, BigDecimal amount);
+    boolean validateCashWithdrawalAmount(ValidateCashWithdrawalAmountDto validateCashWithdrawalAmountDto);
 
-    boolean updateAtmBalance(ATM atm, BigDecimal amount);
+    boolean updateAtmBalance(UpdateAtmBalanceRequestDto updateAtmBalanceRequestDto);
 
-    boolean updateAtmState(ATM atm, ATMState atmState);
+    boolean updateAtmState(UpdateAtmStateRequestDto updateAtmStateRequestDto);
+
+    void closeTransaction(CloseTransactionRequestDto closeTransactionRequestDto);
 }
