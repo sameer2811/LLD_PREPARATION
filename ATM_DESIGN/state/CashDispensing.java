@@ -38,7 +38,10 @@ public class CashDispensing implements State {
     public boolean dispenseCash(Card card, BigDecimal amount) {
         System.out.println("Dispensing cash...");
 
+        System.out.println("Initial balance: " + this.atm.getAtmBalance());
+        System.out.println("Amount to dispense: " + amount);
         BigDecimal remainingBalance = this.atm.getAtmBalance().subtract(amount);
+        System.out.println("Remaining balance: " + remainingBalance);
         this.atm.setAtmBalance(remainingBalance);
 
         System.out.println("Cash dispensed successfully");
