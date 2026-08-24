@@ -20,7 +20,7 @@ public class StartTransaction implements State {
 
     @Override
     public void idleState() {
-        System.out.println("ATM is in Idle State");
+        throw new IllegalStateException("Cannot go to Idle State in Start Transaction State");
     }
 
     @Override
@@ -60,8 +60,7 @@ public class StartTransaction implements State {
 
     @Override
     public void closeTransaction() {
-        System.out.println("Your Transaction is Closed !!!");
-        this.atm.setAtmState(ATMState.IDLE);
+        throw new IllegalStateException("Cannot close transaction in Start Transaction State");
     }
 
     @Override

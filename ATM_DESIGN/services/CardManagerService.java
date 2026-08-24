@@ -1,12 +1,11 @@
 package ATM_DESIGN.services;
 
-import java.math.BigDecimal;
-
-import ATM_DESIGN.models.Card;
+import ATM_DESIGN.dto.ValidateCardDetailsRequestDto;
+import ATM_DESIGN.dto.ValidateCashWithdrawalAmountDto;
 
 public interface CardManagerService {
 
-    boolean readAndValidateCardDetails(Card card);
+    boolean readAndValidateCardDetails(ValidateCardDetailsRequestDto validateCardDetailsRequestDto);
 
-    boolean validateCashWithdrawalAmount(Card card, BigDecimal amount);
+    boolean validateCashWithdrawalAmount(ValidateCashWithdrawalAmountDto validateCashWithdrawalAmountDto);
 }
