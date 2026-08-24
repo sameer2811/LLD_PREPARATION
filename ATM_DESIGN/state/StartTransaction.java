@@ -19,11 +19,6 @@ public class StartTransaction implements State {
     }
 
     @Override
-    public void idleState() {
-        throw new IllegalStateException("Cannot go to Idle State in Start Transaction State");
-    }
-
-    @Override
     public int startTransaction() {
         System.out.println("Your Transaction is Started !!!");
         int transactionId = backendApis.startTransaction(new StartTransactionRequestDto(this.atm.getAtmId()));

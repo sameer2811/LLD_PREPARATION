@@ -15,11 +15,6 @@ public class CashDispensing implements State {
     }
 
     @Override
-    public void idleState() {
-        throw new IllegalStateException("Cannot go to Idle State in Cash Dispensing State");
-    }
-
-    @Override
     public int startTransaction() {
         throw new IllegalStateException("Cannot start transaction in Cash Dispensing State");
     }

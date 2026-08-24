@@ -15,11 +15,6 @@ public class CloseTransaction implements State {
     }
 
     @Override
-    public void idleState() {
-        throw new IllegalStateException("Cannot go to Idle State in Close Transaction State");
-    }
-
-    @Override
     public int startTransaction() {
         throw new IllegalStateException("Cannot start transaction in Close Transaction State");
     }

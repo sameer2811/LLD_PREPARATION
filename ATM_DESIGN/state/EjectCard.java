@@ -14,11 +14,6 @@ public class EjectCard implements State {
     }
 
     @Override
-    public void idleState() {
-        throw new IllegalStateException("Cannot go to Idle State in Eject Card State");
-    }
-
-    @Override
     public int startTransaction() {
         throw new IllegalStateException("Cannot start transaction in Eject Card State");
     }

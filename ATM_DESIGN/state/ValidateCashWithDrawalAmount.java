@@ -18,11 +18,6 @@ public class ValidateCashWithDrawalAmount implements State {
     }
 
     @Override
-    public void idleState() {
-        throw new IllegalStateException("Cannot go to Idle State in Validate Cash Withdrawal Amount State");
-    }
-
-    @Override
     public int startTransaction() {
         throw new IllegalStateException("Cannot start transaction in Validate Cash Withdrawal Amount State");
     }

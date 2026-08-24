@@ -6,9 +6,6 @@ import ATM_DESIGN.enums.ATMState;
 import ATM_DESIGN.models.Card;
 
 public interface State {
-
-    void idleState();
-
     int startTransaction();
 
     boolean readAndValidateCardDetails(Card card);

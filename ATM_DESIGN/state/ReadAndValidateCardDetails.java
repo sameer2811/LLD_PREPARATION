@@ -18,11 +18,6 @@ public class ReadAndValidateCardDetails implements State {
     }
 
     @Override
-    public void idleState() {
-        throw new IllegalStateException("Cannot go to Idle State in Read and Validate Card Details State");
-    }
-
-    @Override
     public int startTransaction() {
         throw new IllegalStateException("Cannot start transaction in Read and Validate Card Details State");
     }
