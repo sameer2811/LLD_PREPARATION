@@ -1,4 +1,5 @@
 package ATM_DESIGN.apis;
+
 import ATM_DESIGN.dto.StartTransactionRequestDto;
 import ATM_DESIGN.dto.ValidateCardDetailsRequestDto;
 import ATM_DESIGN.dto.ValidateCashWithdrawalAmountDto;
@@ -49,6 +50,7 @@ public class NodeBackendApis implements BackendApis {
     public void closeTransaction(CloseTransactionRequestDto closeTransactionRequestDto) {
         // TODO : We can implement the logic to close the transaction
         // and return the boolean value which be given by the server.
-        System.out.println("Transaction Closed for the ATM with ID: " + closeTransactionRequestDto.getAtmId()); // mimicking the response from the server;
+        System.out.println("Transaction Closed for the ATM with ID: " + closeTransactionRequestDto.getAtmId());
+        // mimicking the response from the server;
     }
 }

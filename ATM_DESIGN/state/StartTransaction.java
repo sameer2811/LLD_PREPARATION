@@ -30,10 +30,10 @@ public class StartTransaction implements State {
         System.out.println("Transaction ID: " + transactionId);
 
         if (transactionId > 0) {
-            this.atm.setAtmState(ATMState.READ_AND_VALIDATE_CARD_DETAILS);
+            this.atm.setAtmState(new ReadAndValidateCardDetails(this.atm));
         } else {
             System.out.println("Transaction Failed !!! Cannot Initiate the Transaction !!!");
-            this.atm.setAtmState(ATMState.CLOSE_TRANSACTION);
+            this.atm.setAtmState(new CloseTransaction(this.atm));
         }
         return transactionId;
     }

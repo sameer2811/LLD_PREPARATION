@@ -1,6 +1,7 @@
 package ATM_DESIGN.state;
 
 import ATM_DESIGN.models.ATM;
+import ATM_DESIGN.apis.NodeBackendApis;
 import ATM_DESIGN.enums.ATMState;
 import ATM_DESIGN.models.Card;
 import java.math.BigDecimal;
@@ -48,7 +49,7 @@ public class CloseTransaction implements State {
         System.out.println("Closing transaction...");
 
         System.out.println("Transaction closed successfully");
-        this.atm.setAtmState(ATMState.IDLE);
+        this.atm.setAtmState(new StartTransaction(new NodeBackendApis(), this.atm));
     }
 
     @Override

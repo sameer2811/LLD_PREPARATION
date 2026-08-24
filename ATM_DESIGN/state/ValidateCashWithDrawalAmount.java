@@ -41,10 +41,10 @@ public class ValidateCashWithDrawalAmount implements State {
                 .validateCashWithdrawalAmount(new ValidateCashWithdrawalAmountDto(card, amount));
 
         if (isCashWithdrawalAmountValid) {
-            this.atm.setAtmState(ATMState.CASH_DISPENSING);
+            this.atm.setAtmState(new CashDispensing(this.atm));
         } else {
             System.out.println("Cash withdrawal amount is not valid");
-            this.atm.setAtmState(ATMState.CLOSE_TRANSACTION);
+            this.atm.setAtmState(new CloseTransaction(this.atm));
         }
         return isCashWithdrawalAmountValid;
     }

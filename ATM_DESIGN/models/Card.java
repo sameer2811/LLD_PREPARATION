@@ -8,7 +8,7 @@ public class Card {
     private String pin;
     private CardType cardType;
 
-    private Card(CardBuilder builder) {
+    private Card(Builder builder) {
         this.cardNumber = builder.cardNumber;
         this.cardHolderName = builder.cardHolderName;
         this.pin = builder.pin;
@@ -37,28 +37,28 @@ public class Card {
                 + cardType + "]";
     }
 
-    public static class CardBuilder {
+    public static class Builder {
         private String cardNumber;
         private String cardHolderName;
         private String pin;
         private CardType cardType;
 
-        public CardBuilder setCardNumber(String cardNumber) {
+        public Builder setCardNumber(String cardNumber) {
             this.cardNumber = cardNumber;
             return this;
         }
 
-        public CardBuilder setCardType(CardType cardType) {
+        public Builder setCardType(CardType cardType) {
             this.cardType = cardType;
             return this;
         }
 
-        public CardBuilder setCardHolderName(String cardHolderName) {
+        public Builder setCardHolderName(String cardHolderName) {
             this.cardHolderName = cardHolderName;
             return this;
         }
 
-        public CardBuilder setPin(String pin) {
+        public Builder setPin(String pin) {
             this.pin = pin;
             return this;
         }

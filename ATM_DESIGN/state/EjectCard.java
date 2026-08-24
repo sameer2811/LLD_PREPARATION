@@ -43,7 +43,7 @@ public class EjectCard implements State {
         System.out.println("Ejecting card...");
 
         System.out.println("Card ejected successfully");
-        this.atm.setAtmState(ATMState.CLOSE_TRANSACTION);
+        this.atm.setAtmState(new CloseTransaction(this.atm));
         return true;
     }
 

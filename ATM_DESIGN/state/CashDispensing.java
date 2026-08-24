@@ -42,7 +42,7 @@ public class CashDispensing implements State {
         this.atm.setAtmBalance(remainingBalance);
 
         System.out.println("Cash dispensed successfully");
-        this.atm.setAtmState(ATMState.EJECT_CARD);
+        this.atm.setAtmState(new EjectCard(this.atm));
         return true;
     }
 

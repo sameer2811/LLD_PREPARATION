@@ -30,15 +30,17 @@ public class ReadAndValidateCardDetails implements State {
     @Override
     public boolean readAndValidateCardDetails(Card card) {
 
+        System.out.println("Reading and validating card details...");
         CardManagerService cardManagerService = CardFactory.getCardManagerService(card.getCardType());
 
         boolean isCardValid = cardManagerService.readAndValidateCardDetails(new ValidateCardDetailsRequestDto(card));
 
         if (isCardValid) {
-            this.atm.setAtmState(ATMState.VALIDATE_CASH_WITHDRAWAL_AMOUNT);
+            System.out.println("Card is valid");
+            this.atm.setAtmState(new ValidateCashWithDrawalAmount(this.atm));
         } else {
             System.out.println("Card is not valid");
-            this.atm.setAtmState(ATMState.CLOSE_TRANSACTION);
+            this.atm.setAtmState(new CloseTransaction(this.atm));
         }
         return isCardValid;
     }
