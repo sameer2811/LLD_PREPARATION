@@ -1,7 +1,8 @@
-package IteratorDesignPattern.PlaylistIterator.service;
+package IteratorDesignPattern.PlaylistIterator.iterators;
 
 import IteratorDesignPattern.PlaylistIterator.interfaces.Iterator;
 import IteratorDesignPattern.PlaylistIterator.models.Song;
+import IteratorDesignPattern.PlaylistIterator.service.Playlist;
 
 public class PlaylistIterator implements Iterator<Song>{
 

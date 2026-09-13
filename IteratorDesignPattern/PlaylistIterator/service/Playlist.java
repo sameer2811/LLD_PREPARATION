@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import IteratorDesignPattern.PlaylistIterator.models.Song;
 import IteratorDesignPattern.PlaylistIterator.interfaces.IterableCollection;
 import IteratorDesignPattern.PlaylistIterator.interfaces.Iterator;
+import IteratorDesignPattern.PlaylistIterator.iterators.PlaylistIterator;
 
 
 public class Playlist implements IterableCollection<Song> {
